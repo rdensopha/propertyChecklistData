@@ -6,24 +6,8 @@ ActiveRecord::Base.establish_connection(:adapter => "postgresql",
 require "rubygems"
 require "active_record"
 module PopulateScript
-   ActiveRecord::Base.establish_connection(
-      adapter: 'postgresql',
-      database: 'propertychecklist_development',
-      username: 'postgres',
-      password: 'root',
-      host: 'localhost',
-      port: 5433)
-   # Model to be used..
-   class Project < ActiveRecord::Base
-      belongs_to :project_developer
-      belongs_to :city
-   end
-   class ProjectDeveloper < ActiveRecord::Base
-      has_many :projects
-   end
-   class City < ActiveRecord::Base
-      
-   end   
+   
+     
    Dir.glob("mb*") do |filename|
       entries_hash = {}
       File.open(filename, "r") do |fileContent|
