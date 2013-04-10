@@ -8,7 +8,7 @@ require "active_record"
 module PopulateScript
    
      
-   Dir.glob("mb*") do |filename|
+   Dir.glob("mb*.csv") do |filename|
       entries_hash = {}
       File.open(filename, "r") do |fileContent|
          project_info =[]      
